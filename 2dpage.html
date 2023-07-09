@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ulagalandhan Map</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<link rel="stylesheet" href="https://js.arcgis.com/4.3/esri/css/main.css">
+<script src="https://js.arcgis.com/4.3/"></script>
+<style>
+html, body, #map1 {
+padding: 0;
+margin: 0;
+height: 100%;
+width: 100%;
+}
+#geocode{
+    width: 30%;
+    border: 0px;
+    background-color: rgb(202, 198, 198);
+    border-radius: 3px;
+    
+}
+#geocode :hover{
+        background-color: red;
+        color: white;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-primary" data-bs-theme="dark">
+<div class="container-fluid">
+<a class="navbar-brand" href="#">உலகளந்தான் கோல்</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<li class="nav-item">
+<a class="nav-link active" aria-current="page" href="https://karanveiyon.github.io/DMS-to-Decimal/">DMS to Decimal</a>
+</li>
+<!--         <li class="nav-item ">
+<div class="input-group">
+<select id="basemap_type" class="form-select" aria-label="Default select example"> 
+<option selected>Select Base map type</option>
+<option value="dark-gray">The Dark Gray Canvas basemap </option> 
+<option value="gray">The Light Gray Canvas basemap </option> 
+<option value="hybrid">The World Imagery map </option> 
+<option value="national-geographic">The National Geographic basemap </option> 
+<option value="oceans">The Ocean Basemap </option> 
+<option value="osm">The OpenStreetmap </option> 
+<option value="satellite">The World Imagery map </option> 
+<option value="streets">The Streets basemap </option> 
+<option value="terrain">The Terrain with Labels basemap </option> 
+<option value="topo">The Topographic map </option> 
+<option value="dark-gray-vector">The Dark Gray Canvas Vector basemap </option> 
+<option value="gray-vector">The Light Gray Canvas basemap </option> 
+<option value="streets-navigation-vector">The Streets Navigation Vector basemap </option> 
+<option value="streets-night-vector">The Streets Night Vector basemap </option> 
+<option value="streets-relief-vector">The Streets Relief Vector basemap </option> 
+<option value="streets-vector">The Streets Vector basemap </option> 
+<option value="topo-vector">The Topographic Vector basemap </option> 
+</select><button class="btn btn-success" id="basemap_btn">Apply</button></div></li> -->
+</ul>
+<!-- <form class="d-flex" role="search">
+    <input class="form-control me-2" type="search" id="search" placeholder="Search" aria-label="Search">
+    </form> -->
+</div>
+</div>
+</nav>
+<ul class="nav nav-tabs bg-dark" >
+<li class="nav-item">
+<a class="nav-link"  href="./index.html">Plain Map</a>
+</li>
+<li class="nav-item">
+<a class="nav-link active" aria-current="page" href="#">2D Map</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="./3dpage.html">3D Map</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="./ulagalandhan_kol.html">DMS-Decimal</a>
+</li>
+</ul>
+
+<div id="map1"></div>
+<script>
+var myMap, myMapView;
+require([
+"esri/Map",
+/* "esri/dijit/Search", */
+"esri/Graphic",
+"esri/geometry/Point",
+"esri/symbols/SimpleMarkerSymbol",
+"esri/views/MapView",
+"dojo/domReady!"],
+function(
+Map,/* Search, */Graphic,
+Point,
+SimpleMarkerSymbol,
+MapView
+) {
+myMap = new Map({
+/* basemap: "streets" */
+basemap: "hybrid"
+});
+myMapView = new MapView({
+container: "map1",
+map: myMap,
+center: [79.768021, 11.744699],
+zoom: 6
+});
+/* var search = new Search({
+    map: map,
+    enableButtonMode: true,
+    enableHighlight: true,
+    enableLabel: true
+    }, "search");
+    search.startup(); */
+myMapView.on("click", function(e) {
+myMapView.graphics.removeAll();
+myMapView.popup.open
+({
+location: e.mapPoint,
+title: "<b>"+"This Point Coordinates are:"+"</b>",
+content: "<b>"+"Latitude: "+ e.mapPoint.latitude.toString() + "<br>" + "Longitude: "+
+e.mapPoint.longitude.toString()+"</b>"/* +"\n"+"<button id="+"'"+"geocode"+"'"+">Copy</button>" */
+});
+
+/* var geocode = "Latitude: "+ e.mapPoint.latitude.toString() + " Longitude: "+e.mapPoint.longitude.toString();
+
+document.getElementById("geocode").onclick = function (geocode) {
+  var copyText = geocode;
+  console.log(geocode);
+  navigator.clipboard.writeText(copyText);
+alert("Geo Coordinates Copied!");} */
+//1-
+var myPoint = e.mapPoint;
+//2-
+var myMarkerSymbol = new SimpleMarkerSymbol({
+size: 8,
+color: [184, 4, 84],
+outline: {
+color: [219, 219, 219],
+width: 1
+}
+});
+//3-
+var myGraphic = new Graphic({
+geometry: myPoint,
+symbol: myMarkerSymbol
+});
+//4-
+myMapView.graphics.add(myGraphic);
+});
+});
+
+
+
+</script>
+</body>
+</html>

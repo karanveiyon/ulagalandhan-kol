@@ -1,0 +1,55 @@
+*
+{
+    padding: 0%;
+    margin: 0%;
+    
+    box-sizing: border-box;
+
+}
+body
+{
+    background-image: url(../Images/rajarajan.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    
+}
+nav
+{
+    font-family: kavivanar;
+}
+
+.cal-box
+{
+    opacity: .9;
+}
+
+.content
+{
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;   
+}
+
+.output
+{
+    margin: 0%;
+    text-align:left ;
+    display: flex;
+    flex-direction: column;
+}
+#site-list
+{
+    margin: 0%;
+    text-align: left;
+}
+
+#distance, #distace_place_1, #distace_place_2
+{
+    font-weight: bold;
+}

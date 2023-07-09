@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>உலகளந்தான் கோல்</title>
+<link rel="shortcut icon" href="./Images/favicon.ico" type="image/x-icon">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<link rel="stylesheet" href="https://js.arcgis.com/4.3/esri/css/main.css">
+<script src="https://js.arcgis.com/4.3/"></script>
+<style>
+html, body, #map1 {
+padding: 0;
+margin: 0;
+height: 100%;
+width: 100%;
+}
+
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-primary" data-bs-theme="dark">
+<div class="container-fluid">
+<a class="navbar-brand" href="#">உலகளந்தான் கோல்</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<li class="nav-item">
+<a class="nav-link active" aria-current="page" href="https://karanveiyon.github.io/DMS-to-Decimal/">DMS to Decimal</a>
+</li>
+</ul>
+
+</div>
+</div>
+</nav>
+<ul class="nav nav-tabs bg-dark">
+<li class="nav-item">
+<a class="nav-link"  href="./index.html">Plain Map</a>
+</li>
+<li class="nav-item">
+<a class="nav-link active" aria-current="page" href="#">3D Map</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="./ulagalandhan_kol.html">DMS-Decimal</a>
+</li>
+</ul>
+<div id="map1"></div>
+
+
+
+
+<script>
+    var myMap, mySceneView;
+    require([
+    "esri/Map",
+    "esri/geometry/Point",
+    "esri/Graphic",
+    "esri/symbols/PointSymbol3D",
+    "esri/symbols/ObjectSymbol3DLayer",
+    "esri/views/SceneView",
+    "dojo/domReady!"],
+    function(
+    Map,
+    Point,
+    Graphic,
+    PointSymbol3D,
+    ObjectSymbol3DLayer,
+    SceneView
+    ) {
+    myMap = new Map({
+    basemap: "hybrid",
+    ground: "world-elevation"
+    });
+    mySceneView = new SceneView({
+    container: "map1",
+    map: myMap,
+    center: [79.768021, 11.744699],
+  /*   zoom: 5, */
+    camera: {
+position: [79.768021, 11.744699, 1000],
+tilt: 80,
+heading: 330
+}
+    });
+
+    var myPointSymbol = new PointSymbol3D({
+symbolLayers: [new ObjectSymbol3DLayer ({
+resource: { primitive: "cone" },
+material: {
+color: "#FF00BF"
+},
+width: 380,
+depth: 200,
+height: 400
+})]
+});
+
+    mySceneView.on("click", function(e) {
+    alert("The coordinates you clicked on map are: "+ " \n " + " longitude: "
+    + e.mapPoint.longitude + " \n " + " latitude: "+ e.mapPoint.latitude + " \n " + " elevation: "+
+    e.mapPoint.z);
+    });
+
+
+    
+    });
+
+   
+    </script>
+    </body>
+    </html>
