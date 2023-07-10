@@ -1,168 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>உலகளந்தான் கோல்</title>
-<link rel="shortcut icon" href="./Images/favicon.ico" type="image/x-icon">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kavivanar&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="./styles/style_ul.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>உலகளந்தான் கோல்</title>
+    <link rel="shortcut icon" href="./Images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kavivanar&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./styles/style_ul.css">
 
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary bg-primary" data-bs-theme="dark">
         <div class="container-fluid">
-        <a class="navbar-brand" href="#">உலகளந்தான் கோல்</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="https://karanveiyon.github.io/DMS-to-Decimal/">DMS to Decimal</a>
-        </li>
-        </ul>
-    </div>
-    </div>
+            <a class="navbar-brand" href="#">உலகளந்தான் கோல்</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"
+                            href="https://karanveiyon.github.io/DMS-to-Decimal/">DMS to Decimal</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
     <ul class="nav nav-tabs bg-dark">
-    <li class="nav-item">
-    <a class="nav-link"  href="./index.html">Plain Map</a>
-    </li>
-    <li class="nav-item">
-    <a class="nav-link" aria-current="page" href="./3dpage.html">3D Map</a>
-    </li>
-    <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="#">DMS-Decimal</a>
-    </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./index.html">Plain Map</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="./3dpage.html">3D Map</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">DMS-Decimal</a>
+        </li>
     </ul>
-<div class="container content">
-<div class="row gap-2">
-<div class="container bg-dark cal-box col-md-5 p-3">
-<h5 style="color: white;">Site Data</h5>
-<div class="input-group mb-3">
-<span class="input-group-text" id="basic-addon1">Place</span>
-<input type="text" class="form-control" id="place-name" placeholder="Name of the Place" aria-label="Username" aria-describedby="basic-addon1">
-<span class="input-group-text" id="basic-addon1">S.No</span>
-<input class="form-control" id="site-number" type="number" placeholder="Site Number" aria-label="Username" aria-describedby="basic-addon1">
-</div> 
-<div class="input-group mb-3">
-<span class="input-group-text" id="basic-addon1">Site</span>
-<input type="text" class="form-control" id="site-name" type="text" placeholder="Name of the Site" aria-label="Username" aria-describedby="basic-addon1">
-<span class="input-group-text" id="basic-addon1">Type</span>
-<input type="text" class="form-control" id="site-type" type="text" placeholder="Type of the Site" aria-label="Username" aria-describedby="basic-addon1">
-</div>
-<!-- Latitude and Longitude -->
-<h6 style="color: white;">GIS Co-ordinates</h6>
-<div class="input-group mb-3">
-<span class="input-group-text" id="basic-addon1">Latitude</span>
-<input type="number" class="form-control" id="lat-deg" type="number" placeholder="Degree" aria-label="Username" aria-describedby="basic-addon1">
-<input type="number" class="form-control" id="lat-min" type="number" placeholder="Minute" aria-label="Username" aria-describedby="basic-addon1">
-<input type="number" class="form-control" id="lat-sec" type="number" placeholder="Second" aria-label="Username" aria-describedby="basic-addon1">
-</div>
-<div class="input-group mb-3">
-<span class="input-group-text" id="basic-addon1">Longitude</span>
-<input type="number" class="form-control" id="long-deg" type="number" placeholder="Degree" aria-label="Username" aria-describedby="basic-addon1">
-<input type="number" class="form-control" id="long-min" type="number" placeholder="Minute" aria-label="Username" aria-describedby="basic-addon1">
-<input type="number" class="form-control" id="long-sec" type="number" placeholder="Second" aria-label="Username" aria-describedby="basic-addon1">
-</div>
-<div class="col-md-12">
-<div class="row justify-content-between">
-<div class="col-md-5 m-1"><button class="btn btn-success" id="calculate" style="width: 100%;">Calculate</button></div>
-<div class="col-md-5 m-1"><a href="./ulagalandhan_kol.html"><button class="btn btn-danger" id="reset" style="width: 100%;">Reset</button></a></div>
-</div></div>
-</div>
-<div class="container bg-dark cal-box col-md-5 p-3 output" style="color: white;">
-    <h5>CSV format of coordinates</h5><br>
-<div id="results">
-<ul>name, lat, long, type</ul>
-<span id="site-list">
-</span>
-</div>
-<div class="row align-items-end">
-<div class="col">
-<button class="btn btn-warning" id="txt-download-btn" style="width: 100%;">Download CSV .txt File</button>
-<br><br>
-<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#geoFunctions" style="width: 100%;">
-    Get Geo Info
-  </button>
-  <br> <br>
-<div class="col">
-<a href="./ulagalandhan_kol.py" download="./ulagalandhan_kol.py">
-<button class="btn btn-success" id="py-download-btn" style="width: 100%;">Download Python Convertor</button>
-</a></div>
-</div>
-</div>   
-</div>
-</div>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="geoFunctions" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen">
-      <div class="modal-content">
-        <div class="modal-header bg-dark text-light">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Geo Functions</h1>
-          <button type="button" class="btn-close bg-secondary" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body bg-dark text-warning">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="container col-md-4 live_location p-1" id="current_location">
-                        <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="current_location_value" placeholder="" aria-label="" aria-describedby="button-addon2" readonly>
-                        <button class="btn btn-success btn-default" id="get_location">Get Current Location</button>
+    <div class="container content">
+        <div class="row gap-2">
+            <div class="container bg-dark cal-box col-md-5 p-3">
+                <h5 style="color: white;">Site Data</h5>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Place</span>
+                    <input type="text" class="form-control" id="place-name" placeholder="Name of the Place"
+                        aria-label="Username" aria-describedby="basic-addon1">
+                    <span class="input-group-text" id="basic-addon1">S.No</span>
+                    <input class="form-control" id="site-number" type="number" placeholder="Site Number"
+                        aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Site</span>
+                    <input type="text" class="form-control" id="site-name" type="text" placeholder="Name of the Site"
+                        aria-label="Username" aria-describedby="basic-addon1">
+                    <span class="input-group-text" id="basic-addon1">Type</span>
+                    <input type="text" class="form-control" id="site-type" type="text" placeholder="Type of the Site"
+                        aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <!-- Latitude and Longitude -->
+                <h6 style="color: white;">GIS Co-ordinates</h6>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Latitude</span>
+                    <input type="number" class="form-control" id="lat-deg" type="number" placeholder="Degree"
+                        aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="number" class="form-control" id="lat-min" type="number" placeholder="Minute"
+                        aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="number" class="form-control" id="lat-sec" type="number" placeholder="Second"
+                        aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Longitude</span>
+                    <input type="number" class="form-control" id="long-deg" type="number" placeholder="Degree"
+                        aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="number" class="form-control" id="long-min" type="number" placeholder="Minute"
+                        aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="number" class="form-control" id="long-sec" type="number" placeholder="Second"
+                        aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="col-md-12">
+                    <div class="row justify-content-between">
+                        <div class="col-md-5 m-1"><button class="btn btn-success" id="calculate"
+                                style="width: 100%;">Calculate</button></div>
+                        <div class="col-md-5 m-1"><a href="./ulagalandhan_kol.html"><button class="btn btn-danger"
+                                    id="reset" style="width: 100%;">Reset</button></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="container bg-dark cal-box col-md-5 p-3 output" style="color: white;">
+                <h5>CSV format of coordinates</h5><br>
+                <div id="results">
+                    <ul>name, lat, long, type</ul>
+                    <span id="site-list">
+                    </span>
+                </div>
+                <div class="row align-items-end">
+                    <div class="col">
+                        <button class="btn btn-warning" id="txt-download-btn" style="width: 100%;">Download CSV .txt
+                            File</button>
+                        <br><br>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#geoFunctions" style="width: 100%;">
+                            Get Geo Info
+                        </button>
+                        <br> <br>
+                        <div class="col">
+                            <a href="./ulagalandhan_kol.py" download="./ulagalandhan_kol.py">
+                                <button class="btn btn-success" id="py-download-btn" style="width: 100%;">Download
+                                    Python Convertor</button>
+                            </a>
                         </div>
-                        <span id="current_latitude"></span><br />
-                        <span id="current_longitude"></span><br />
-                        <span id="current_location_name"></span>
                     </div>
-                    <div class="container col-md-4 live_location p-1" id="current_location_name">
-                        <div class="input-group mb-3">
-                            <input type="text" id="current_lat_long" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2">
-                            <button class="btn btn-success" type="button" id="get_location_name">Get Location Name</button>
-                          </div>
-                          <span id="location_name"></span>
-                    </div>
-                    <div class="container col-md-4 live_location p-1" id="current_location_geoCode">
-                        <div class="input-group mb-3">
-                            <input type="text" id="place_name" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2">
-                            <button id="get_geo_cordinate" class="btn btn-success" type="button" id="button-addon2">Get Geo-Coordinates</button>
-                          </div>
-                          <span id="location_geo_code"> </span>
-                    </div>
-                </div>
-                <Br><br>
-                <div class="row">
-                    <div class="input-group">
-                        <span class="input-group-text">Location 1</span>
-                        <input type="text" id="place_1" aria-label="" placeholder="Eg: 11.7564329,79.7634644" class="form-control">
-                        <span class="input-group-text">Location 2</span>
-                        <input type="text" id="place_2" aria-label="" placeholder="Eg: 11.9415377,79.4861469" class="form-control">
-                        <button class="btn btn-success" type="button"id="get_distance_btn">Get Distance</button>  
-                    </div><br><br>
-                    <div class="d-none bg-dark text-warning" id="distance_result_1">The Distance between <span id="distace_place_1"></span> and <span id="distace_place_2"></span> is <span id="distance"></span></div>
-                </div>
-                <br><br>
-                <div class="row">
-                    <div class="input-group">
-                        <span class="input-group-text">Place 1</span>
-                        <input type="text" id="place_name_1" aria-label="" placeholder="Eg: Cuddalore" class="form-control">
-                        <span class="input-group-text">Place 2</span>
-                        <input type="text" id="place_name_2" aria-label="" placeholder="Eg: Villupuram" class="form-control">
-                        <button class="btn btn-success" type="button"id="get_distance_btn_2">Get Distance</button>  
-                    </div><br><br>
-                    <div class="d-none bg-dark text-warning" id="distance_result_2">The Distance between <span id="distace_name_place_1"></span> and <span id="distace_name_place_2"></span> is <span id="distance_by_name"></span></div>
                 </div>
             </div>
         </div>
-      </div>
     </div>
-  </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-<script src="./scripts/script_ul.js"></script>  
+    <!-- Modal -->
+    <div class="modal fade" id="geoFunctions" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-light">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Geo Functions</h1>
+                    <button type="button" class="btn-close bg-secondary" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body bg-dark text-warning">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="container col-md-4 live_location p-1" id="current_location">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" id="current_location_value" placeholder=""
+                                        aria-label="" aria-describedby="button-addon2" readonly>
+                                    <button class="btn btn-success btn-default" id="get_location">Get Current
+                                        Location</button>
+                                </div>
+                                <span id="current_latitude"></span><br />
+                                <span id="current_longitude"></span><br />
+                                <span id="current_location_name"></span>
+                            </div>
+                            <div class="container col-md-4 live_location p-1" id="current_location_name">
+                                <div class="input-group mb-3">
+                                    <input type="text" id="current_lat_long" class="form-control" placeholder=""
+                                        aria-label="" aria-describedby="button-addon2">
+                                    <button class="btn btn-success" type="button" id="get_location_name">Get Location Name</button>
+                                </div>
+                                <span id="location_name"></span>
+                            </div>
+                            <div class="container col-md-4 live_location p-1" id="current_location_geoCode">
+                                <div class="input-group mb-3">
+                                    <input type="text" id="place_name" class="form-control" placeholder="" aria-label=""
+                                        aria-describedby="button-addon2">
+                                    <button id="get_geo_cordinate" class="btn btn-success" type="button"
+                                        id="button-addon2">Get Geo-Coordinates</button>
+                                </div>
+                                <span id="location_geo_code"> </span>
+                            </div>
+                        </div>
+                        <Br><br>
+                        <div class="row">
+                            <div class="container-fluid col-md-6">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Location 1</span>
+                                    <input type="text" id="place_1" aria-label=""
+                                        placeholder="Eg: 11.7564329,79.7634644" class="form-control">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Location 2</span>
+                                    <input type="text" id="place_2" aria-label=""
+                                        placeholder="Eg: 11.9415377,79.4861469" class="form-control">
+                                </div>
+                                <div class="d-grid">
+                                    <button class="btn btn-success" type="button" id="get_distance_btn">Get
+                                        Distance</button>
+                                </div>
+                            </div>
+                        <div class="container-fluid col-md-6">
+                            <div class="d-none bg-dark text-warning" id="distance_result_1">The Distance between <span
+                                    id="distace_place_1"></span> and <span id="distace_place_2"></span> is <span
+                                    id="distance"></span></div>
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="row">
+                        <div class="container-fluid col-md-6">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Place 1</span>
+                                <input type="text" id="place_name_1" aria-label="" placeholder="Eg: Cuddalore"
+                                    class="form-control">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Place 2</span>
+                                <input type="text" id="place_name_2" aria-label="" placeholder="Eg: Villupuram"
+                                    class="form-control">
+                            </div>
+                            <div class="d-grid">
+                                <button class="btn btn-success" type="button" id="get_distance_btn_2">Get
+                                    Distance</button>
+                            </div>
+                        </div>
+                    <div class="container-fluid col-md-6">
+                        <div class="d-none bg-dark text-warning" id="distance_result_2">The Distance between <span
+                                id="distace_name_place_1"></span> and <span id="distace_name_place_2"></span> is <span
+                                id="distance_by_name"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="./scripts/script_ul.js"></script>
 </body>
 </html>
